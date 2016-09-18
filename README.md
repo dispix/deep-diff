@@ -12,18 +12,18 @@ npm install -S return-deep-diff
 
 ```js
 const objOne = {
-	a: 1,
+  a: 1,
   b: {
-  	c: 2,
+    c: 2,
     d: 3
   },
   e: 4
 }
 
 const objTwo = {
-	a: 1,
+  a: 1,
   b: {
-  	c: 2,
+    c: 2,
     d: 30,
     f: 50
   },
@@ -33,14 +33,13 @@ const objTwo = {
 console.log(objOne, objTwo)
 /*
 returns:
-	{
-		b: {
-			d: 30
-		},
-		e: 40
-	}
+  {
+    b: {
+      d: 30
+    },
+    e: 40
+  }
 */
-}
 ```
 
 The two objects must share the exact same structure, which is defined by the first object. If a key is present in the second but not the first object, it will not be present in the diff object.
