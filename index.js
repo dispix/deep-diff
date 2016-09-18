@@ -1,5 +1,5 @@
-'use strict';
+'use strict'
 
-var deepDiff = require('dist/main.js');
+var deepDiff = require('dist/main.js')
 
-module.exports = deepDiff;
+module.exports = deepDiff
