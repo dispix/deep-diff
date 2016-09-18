@@ -40,7 +40,19 @@ returns:
     e: 40
   }
 */
+
+console.log(objOne, objTwo, true)
+/*
+returns:
+  {
+    b: {
+      d: 30
+      f: 50
+    },
+    e: 40
+  }
+*/
 ```
 
-The two objects must share the exact same structure, which is defined by the first object. If a key is present in the second but not the first object, it will not be present in the diff object.
+The two objects must share the exact same structure, which is defined by the first object. If a key is present in the second but not the first object, it will not be present in the diff object unless `keepNewKeys` equals `true`.
 The function does not mutate neither the first nor the second object.
