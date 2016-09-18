@@ -1,0 +1,21 @@
+{
+  "name": "deep-diff",
+  "version": "0.1.0",
+  "description": "Small library who deeply check for difference between two objects",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src/deepDiff.js dist/deepDiff.js"
+  },
+  "keywords": [
+    "javascript",
+    "object",
+    "es6",
+    "es2015"
+  ],
+  "author": "Octave \"Dispix\" Raimbault <dispyx@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-cli": "^6.14.0"
+  }
+}
