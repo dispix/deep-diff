@@ -1,6 +1,6 @@
 #  return-deep-diff
 
-Small immutable function returning an object representing the difference between to objects.
+Function returning an object representing the difference between two objects. The function is immutable-compliant as it does not affect the arguments.
 
 ## Installation
 
@@ -11,6 +11,8 @@ npm install -S return-deep-diff
 ## Usage
 
 ```js
+import deepDiff from 'return-deep-diff'
+
 const objOne = {
   a: 1,
   b: {
@@ -30,7 +32,7 @@ const objTwo = {
   e: 40 
 }
 
-console.log(objOne, objTwo)
+console.log(deepDiff(objOne, objTwo))
 /*
 returns:
   {
@@ -41,7 +43,7 @@ returns:
   }
 */
 
-console.log(objOne, objTwo, true)
+console.log(deepDiff(objOne, objTwo, true))
 /*
 returns:
   {
