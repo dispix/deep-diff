@@ -1,6 +1,6 @@
 {
   "name": "return-deep-diff",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Small library who deeply check for difference between two objects",
   "repository": "dispix/deep-diff",
   "main": "index.js",
