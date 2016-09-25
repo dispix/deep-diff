@@ -7,7 +7,11 @@ describe('deepDiff', () => {
       c: 2,
       d: 3
     },
-    e: 4
+    e: 4,
+    f: true,
+    g: [1, 'two', 3, 'four'],
+    h: [1, 'two', 3, 'four'],
+    i: true
   }
 
   const objTwo = {
@@ -17,7 +21,11 @@ describe('deepDiff', () => {
       d: 30,
       f: 50
     },
-    e: 40
+    e: 40,
+    f: true,
+    g: [1, 'two', 3, 'four'],
+    h: [1, 'owt', 3, 'four'],
+    i: false
   }
 
   it('should return the diff object between two objects', () => {
@@ -25,7 +33,9 @@ describe('deepDiff', () => {
       b: {
         d: 30
       },
-      e: 40
+      e: 40,
+      h: [1, 'owt', 3, 'four'],
+      i: false
     }
 
     expect(deepDiff(objOne, objTwo)).toEqual(expected)
@@ -37,7 +47,9 @@ describe('deepDiff', () => {
         d: 30,
         f: 50
       },
-      e: 40
+      e: 40,
+      h: [1, 'owt', 3, 'four'],
+      i: false
     }
 
     expect(deepDiff(objOne, objTwo, true)).toEqual(expected)
@@ -65,7 +77,9 @@ describe('deepDiff', () => {
         d: 30,
         f: 50
       },
-      e: 40
+      e: 40,
+      h: [1, 'owt', 3, 'four'],
+      i: false
     }
     let wrongParam = JSON.stringify(objOne)
 
@@ -75,7 +89,9 @@ describe('deepDiff', () => {
       b: {
         d: 30
       },
-      e: 40
+      e: 40,
+      h: [1, 'owt', 3, 'four'],
+      i: false
     }
     wrongParam = null
 
