@@ -8,15 +8,14 @@ export default function deepDiff (obj1, obj2, keepNewKeys = false) {
   }
 
   const diff = {}
-  const keep = Boolean(keepNewKeys)
 
   Object.keys(obj2).forEach((key) => {
-    if (!obj1[key] && !keep) {
+    if (!obj1.hasOwnProperty(key) && !keepNewKeys) {
       return
     }
 
     if (typeof obj2[key] === 'object') {
-      diff[key] = deepDiff(obj1[key], obj2[key], keep)
+      diff[key] = deepDiff(obj1[key], obj2[key], keepNewKeys)
       return
     }
 
