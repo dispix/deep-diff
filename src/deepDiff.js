@@ -39,6 +39,13 @@ function deepDiff (obj1, obj2, keepNewKeys = false) {
       return
     }
 
+    if (obj1[key] === null || obj2[key] === null) {
+      if (obj1[key] !== obj2[key]) {
+        diff[key] = obj2[key]
+      }
+      return
+    }
+
     if (typeof obj2[key] === 'object') {
       if (obj2[key] instanceof Array) {
         if (!arrayEquals(obj2[key], obj1[key])) {
