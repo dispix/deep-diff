@@ -66,6 +66,11 @@ function deepDiff(obj1, obj2) {
       }
 
       diff[key] = deepDiff(obj1[key], obj2[key], keepNewKeys);
+
+      if (diff[key] === null) {
+        delete diff[key];
+      }
+
       return;
     }
 
@@ -74,6 +79,10 @@ function deepDiff(obj1, obj2) {
       return;
     }
   });
+
+  if (Object.keys(diff).length === 0) {
+    return null;
+  }
 
   return diff;
 }
