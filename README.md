@@ -1,4 +1,5 @@
-#  return-deep-diff
+#  Deep Diff
+[![Build Status](https://travis-ci.org/dispix/deep-diff.svg?branch=master)](https://travis-ci.org/dispix/deep-diff) [![npm](https://badge.fury.io/js/return-deep-diff.svg)](https://www.npmjs.com/package/return-deep-diff)
 
 Function returning an object representing the difference between two objects. The function is immutable-compliant as it does not affect the arguments.
 
@@ -29,7 +30,7 @@ const objTwo = {
     d: 30,
     f: 50
   },
-  e: 40 
+  e: 40
 }
 
 console.log(deepDiff(objOne, objTwo))
