@@ -1,5 +1,6 @@
 #  Deep Diff
 [![Build Status](https://travis-ci.org/dispix/deep-diff.svg?branch=master)](https://travis-ci.org/dispix/deep-diff) [![npm](https://badge.fury.io/js/return-deep-diff.svg)](https://www.npmjs.com/package/return-deep-diff)
+[![Coverage Status](https://coveralls.io/repos/github/dispix/deep-diff/badge.svg?branch=master)](https://coveralls.io/github/dispix/deep-diff?branch=master)
 
 Function returning an object representing the difference between two objects. The function is immutable-compliant as it does not affect the arguments.
 
