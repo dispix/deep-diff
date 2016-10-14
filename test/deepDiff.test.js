@@ -13,7 +13,8 @@ describe('deepDiff', () => {
     h: [1, 'two', 3, 'four'],
     i: true,
     j: null,
-    k: 'blue'
+    k: 'blue',
+    l: [[0, 1], [2, 3]]
   }
 
   const objTwo = {
@@ -29,36 +30,39 @@ describe('deepDiff', () => {
     h: [1, 'owt', 3, 'four'],
     i: false,
     j: null,
-    k: null
+    k: null,
+    l: [[0, 1], [2, 4]]
+  }
+
+  const expected = {
+    b: {
+      d: 30
+    },
+    e: 40,
+    h: [1, 'owt', 3, 'four'],
+    i: false,
+    k: null,
+    l: [[0, 1], [2, 4]]
+  }
+
+  const expectedWithNewKeys = {
+    b: {
+      d: 30,
+      f: 50
+    },
+    e: 40,
+    h: [1, 'owt', 3, 'four'],
+    i: false,
+    k: null,
+    l: [[0, 1], [2, 4]]
   }
 
   it('should return the diff object between two objects', () => {
-    const expected = {
-      b: {
-        d: 30
-      },
-      e: 40,
-      h: [1, 'owt', 3, 'four'],
-      i: false,
-      k: null
-    }
-
     expect(deepDiff(objOne, objTwo)).toEqual(expected)
   })
 
   it('should include new keys when the third parameter is true', () => {
-    const expected = {
-      b: {
-        d: 30,
-        f: 50
-      },
-      e: 40,
-      h: [1, 'owt', 3, 'four'],
-      i: false,
-      k: null
-    }
-
-    expect(deepDiff(objOne, objTwo, true)).toEqual(expected)
+    expect(deepDiff(objOne, objTwo, true)).toEqual(expectedWithNewKeys)
   })
 
   it('should throw a new TypeError if the first parameter is not an object', () => {
@@ -78,29 +82,10 @@ describe('deepDiff', () => {
   })
 
   it('should not throw an error if the third parameter is not a boolean', () => {
-    let expected = {
-      b: {
-        d: 30,
-        f: 50
-      },
-      e: 40,
-      h: [1, 'owt', 3, 'four'],
-      i: false,
-      k: null
-    }
     let wrongParam = JSON.stringify(objOne)
 
-    expect(deepDiff(objOne, objTwo, wrongParam)).toEqual(expected)
+    expect(deepDiff(objOne, objTwo, wrongParam)).toEqual(expectedWithNewKeys)
 
-    expected = {
-      b: {
-        d: 30
-      },
-      e: 40,
-      h: [1, 'owt', 3, 'four'],
-      i: false,
-      k: null
-    }
     wrongParam = null
 
     expect(deepDiff(objOne, objTwo, wrongParam)).toEqual(expected)
