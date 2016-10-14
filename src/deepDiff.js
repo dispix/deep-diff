@@ -21,7 +21,7 @@ function arrayEquals (arr1, arr2) {
 
   for (var i = 0, l = arr1.length; i < l; i++) {
     if (arr1[i] instanceof Array && arr2[i] instanceof Array) {
-      if (!arr1[i].equals(arr2[i])) {
+      if (!arrayEquals(arr1[i], arr2[i])) {
         return false
       }
     } else if (arr1[i] !== arr2[i]) {
