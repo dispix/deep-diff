@@ -95,4 +95,8 @@ describe('deepDiff', () => {
     expect(deepDiff(objOne, objTwo)).not.toBe(objOne)
     expect(deepDiff(objOne, objTwo)).not.toBe(objTwo)
   })
+
+  it('should return null if there is no difference between objects', () => {
+    expect(deepDiff(objOne, objOne)).toBe(null)
+  })
 })
