@@ -2,7 +2,10 @@
   "name": "return-deep-diff",
   "version": "0.2.4",
   "description": "Small library who deeply check for difference between two objects",
-  "repository": "dispix/deep-diff",
+  "repository": {
+    "url": "https://github.com/dispix/deep-diff.git",
+    "type": "git"
+  },
   "main": "index.js",
   "scripts": {
     "build": "npm test && babel src/deepDiff.js -o dist/main.js",
