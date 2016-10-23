@@ -8,7 +8,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "build": "npm test && babel src/deepDiff.js -o dist/main.js",
+    "build": "yarn test && babel src/deepDiff.js -o dist/main.js",
     "test": "NODE_ENV=test standard && jest --verbose --coverage",
     "format": "standard --fix"
   },
