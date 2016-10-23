@@ -1,4 +1,4 @@
-import arrayEquals from '../../src/utils/arrayEquals'
+import arrayEquals from '../src/utils/arrayEquals'
 
 describe('arrayEquals', () => {
   const arrOne = [
