@@ -1,5 +1,5 @@
 'use strict'
 
-var deepDiff = require('./dist/main.js')
+import deepDiff from './src/deepDiff'
 
 module.exports = deepDiff
