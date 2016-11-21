@@ -1,3 +1,5 @@
+'use strict'
+
 import arrayEquals from './utils/arrayEquals'
 
 /**

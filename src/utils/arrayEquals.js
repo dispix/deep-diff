@@ -1,3 +1,5 @@
+'use strict'
+
 /**
  *
  *  Checks if two arrays are strictly equals

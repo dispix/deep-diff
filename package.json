@@ -6,9 +6,9 @@
     "url": "https://github.com/dispix/deep-diff.git",
     "type": "git"
   },
-  "main": "index.js",
+  "main": "./dist/return-deep-diff.min.js",
   "scripts": {
-    "build": "yarn test && babel src/deepDiff.js -o dist/main.js",
+    "build": "npm test && webpack",
     "test": "NODE_ENV=test standard && jest --verbose --coverage",
     "format": "standard --fix"
   },
@@ -30,16 +30,21 @@
     "javascript",
     "object",
     "es6",
-    "es2015"
+    "es2015",
+    "webpack",
+    "jest"
   ],
   "author": "Octave \"Dispix\" Raimbault <dispyx@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "babel": "^6.5.2",
     "babel-cli": "^6.14.0",
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.8",
     "babel-preset-es2015": "^6.14.0",
     "coveralls": "^2.11.14",
     "jest": "^16.0.2",
-    "standard": "^8.1.0"
+    "standard": "^8.1.0",
+    "webpack": "^1.13.3"
   }
 }
