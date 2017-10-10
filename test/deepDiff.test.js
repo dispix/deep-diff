@@ -1,4 +1,10 @@
-import deepDiff from '../src/deepDiff'
+const isProd = process.env.NODE_ENV === 'production'
+const path = require('path')
+const source = isProd
+  ? path.resolve('dist/return-deep-diff.min')
+  : path.resolve('src/deepDiff.js')
+
+const deepDiff = require(source).default
 
 describe('deepDiff', () => {
   const objOne = {

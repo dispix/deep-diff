@@ -10,6 +10,7 @@
   "scripts": {
     "build": "npm test && webpack",
     "test": "NODE_ENV=test standard && jest --verbose --coverage",
+    "test:build": "NODE_ENV=production standard && jest ./test/deepDiff.test.js --verbose --coverage",
     "format": "standard --fix"
   },
   "standard": {
