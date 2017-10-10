@@ -26,7 +26,10 @@ function deepDiff (obj1, obj2, keepNewKeys = false) {
   const diff = {}
 
   Object.keys(obj2).forEach((key) => {
-    if (!obj1.hasOwnProperty(key) && !keepNewKeys) {
+    if (!obj1.hasOwnProperty(key)) {
+      if (keepNewKeys) {
+        diff[key] = obj2[key]
+      }
       return
     }
 

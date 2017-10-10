@@ -99,4 +99,9 @@ describe('deepDiff', () => {
   it('should return null if there is no difference between objects', () => {
     expect(deepDiff(objOne, objOne)).toBe(null)
   })
+
+  it('should behave correctly with an empty object as first parameter', () => {
+    expect(deepDiff({}, { a: { b: 2 } })).toEqual(null)
+    expect(deepDiff({}, { a: { b: 2 } }, true)).toEqual({ a: { b: 2 } })
+  })
 })
