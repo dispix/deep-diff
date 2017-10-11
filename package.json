@@ -8,6 +8,7 @@
   },
   "main": "./dist/return-deep-diff.min.js",
   "scripts": {
+    "preversion": "npm run build && git add dist",
     "build": "npm test && webpack",
     "test": "NODE_ENV=test standard && jest --verbose --coverage",
     "format": "standard --fix"
