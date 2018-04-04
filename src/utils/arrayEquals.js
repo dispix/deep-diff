@@ -1,4 +1,5 @@
 'use strict'
+import deepDiff from '../deepDiff';
 
 /**
  *
@@ -26,6 +27,9 @@ function arrayEquals (arr1, arr2) {
       if (!arrayEquals(arr1[i], arr2[i])) {
         return false
       }
+    } else if (arr1[i] instanceof Object && arr2[i] instanceof Object) {
+      const diff = deepDiff(arr1[i], arr2[i], true);
+      return (diff === null);
     } else if (arr1[i] !== arr2[i]) {
       return false
     }
