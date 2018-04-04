@@ -14,7 +14,8 @@ describe('deepDiff', () => {
     i: true,
     j: null,
     k: 'blue',
-    l: [[0, 1], [2, 3]]
+    l: [[0, 1], [2, 3]],
+    m: [{ a: 0 }]
   }
 
   const objTwo = {
@@ -31,7 +32,8 @@ describe('deepDiff', () => {
     i: false,
     j: null,
     k: null,
-    l: [[0, 1], [2, 4]]
+    l: [[0, 1], [2, 4]],
+    m: [{ a: 0 }]
   }
 
   const expected = {
