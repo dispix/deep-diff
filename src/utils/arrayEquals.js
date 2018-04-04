@@ -1,5 +1,7 @@
 'use strict'
 
+import deepDiff from '../deepDiff'
+
 /**
  *
  *  Checks if two arrays are strictly equals
@@ -24,6 +26,10 @@ function arrayEquals (arr1, arr2) {
   for (var i = 0, l = arr1.length; i < l; i++) {
     if (arr1[i] instanceof Array && arr2[i] instanceof Array) {
       if (!arrayEquals(arr1[i], arr2[i])) {
+        return false
+      }
+    } else if (arr1[i] instanceof Object && arr2[i] instanceof Object) {
+      if (deepDiff(arr1[i], arr2[i], true) !== null) {
         return false
       }
     } else if (arr1[i] !== arr2[i]) {
