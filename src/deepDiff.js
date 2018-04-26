@@ -61,7 +61,6 @@ function deepDiff (obj1, obj2, keepNewKeys = false) {
 
     if (obj1[key] !== obj2[key]) {
       diff[key] = obj2[key]
-      return
     }
   })
 
