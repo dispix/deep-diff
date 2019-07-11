@@ -46,7 +46,7 @@ describe('deepDiff', () => {
       a: 1,
       b: {},
       c: {
-        d:'one'
+        d: 'one'
       }
     }
   }
