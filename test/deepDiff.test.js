@@ -14,7 +14,13 @@ describe('deepDiff', () => {
     i: true,
     j: null,
     k: 'blue',
-    l: [[0, 1], [2, 3]]
+    l: [[0, 1], [2, 3]],
+    m: 'one',
+    n: {
+      a: 1,
+      b: {},
+      c: 'one'
+    }
   }
 
   const objTwo = {
@@ -31,7 +37,18 @@ describe('deepDiff', () => {
     i: false,
     j: null,
     k: null,
-    l: [[0, 1], [2, 4]]
+    l: [[0, 1], [2, 4]],
+    m: {
+      a: 1,
+      b: 2
+    },
+    n: {
+      a: 1,
+      b: {},
+      c: {
+        d: 'one'
+      }
+    }
   }
 
   const expected = {
@@ -42,7 +59,16 @@ describe('deepDiff', () => {
     h: [1, 'owt', 3, 'four'],
     i: false,
     k: null,
-    l: [[0, 1], [2, 4]]
+    l: [[0, 1], [2, 4]],
+    m: {
+      a: 1,
+      b: 2
+    },
+    n: {
+      c: {
+        d: 'one'
+      }
+    }
   }
 
   const expectedWithNewKeys = {
@@ -54,7 +80,16 @@ describe('deepDiff', () => {
     h: [1, 'owt', 3, 'four'],
     i: false,
     k: null,
-    l: [[0, 1], [2, 4]]
+    l: [[0, 1], [2, 4]],
+    m: {
+      a: 1,
+      b: 2
+    },
+    n: {
+      c: {
+        d: 'one'
+      }
+    }
   }
 
   it('should return the diff object between two objects', () => {
